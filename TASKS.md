@@ -9,6 +9,10 @@ Build a public, mobile-first e-commerce frontend hosted on GitHub Pages for **RG
 - **Branch**: `main` (source), `gh-pages` (deployed `dist/`)
 
 ## Active Task
+- [ ] **URGENT:** Verify this repo is **public** (Settings → Danger Zone → Change visibility → Public).
+- [ ] **URGENT:** Verify GitHub Pages is **enabled** (Settings → Pages → Source: Deploy from a branch → Branch: `gh-pages` /(root) or `main`).
+- [ ] **URGENT:** Ensure Pages site is accessible at `https://jlaiii.github.io/hermes-ecommerce-shop/` — curl it with cache-buster and check for 200.
+- [ ] **URGENT:** Make sure the live site link is in the README.md and repo About section.
 - [ ] Run a full mobile QA pass on every page (cart, engraving preview, nav, product grid). Fix any layout bugs, horizontal scroll, tiny tap targets, or broken links. Verify on 320px+ width.
 
 ## Backlog
