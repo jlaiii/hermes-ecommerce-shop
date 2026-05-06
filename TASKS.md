@@ -9,17 +9,9 @@ Build a public, mobile-first e-commerce frontend hosted on GitHub Pages for **RG
 - **Branch**: `main` (source), `gh-pages` (deployed `dist/`)
 
 ## Active Task
-- [ ] Run a full **mobile QA** pass on every page (cart, engraving preview, nav, product grid). Fix any layout bugs, horizontal scroll, tiny tap targets, or broken links. Verify on 320px+ width.
-- Sub-task: ✅ Header / nav (mobile menu toggle ≥44×44, nav link tap targets)
-- Sub-task: ✅ Product listing grid (prevent overflow, proper grid, tap targets)
-- Sub-task: ✅ Product detail (engraving input 16px to prevent iOS zoom)
-- Sub-task: ✅ Cart page (item layout, quantity controls, tap targets)
-- Sub-task: ✅ Footer (social icons ≥44×44, link tap targets, responsive)
-- Sub-task: ✅ Global image overflow fix, all buttons ≥44×44, extra-narrow padding
-- Next: Test live site on all routes
+- [ ] Run a full **user-friendliness** pass — clear CTAs, readable fonts/colors, intuitive flow, no confusing dead-ends. Fix anything that feels clunky.
 
 ## Backlog
-- [ ] Run a full **user-friendliness** pass — clear CTAs, readable fonts/colors, intuitive flow, no confusing dead-ends. Fix anything that feels clunky.
 - [ ] **SEO / discoverability:** Ensure search engines can see the knives and wallets. Add proper `<title>`/`<meta description>` on every page, JSON-LD Product schema, semantic HTML (`<main>`, `<article>`, `<header>`, etc.), alt text on images, and a `robots.txt` that allows indexing.
 - [ ] **Page-load smoke test:** Hard-refresh the live site, check Network tab for 404s, verify `<noscript>` fallback, verify favicon loads.
 - [ ] Replace placeholder product images with real knife/wallet product photos or high-quality Unsplash equivalents.
@@ -57,6 +49,7 @@ Build a public, mobile-first e-commerce frontend hosted on GitHub Pages for **RG
 - [x] **README updated** with full project description, live site link, features list, tech stack, and brand info.
 - [x] **404.html improved** with brand styling, noscript fallback, and "Looks Like This Page Ran Away" messaging.
 - [x] **Deploy script** (`npm run deploy`) added to package.json.
+- [x] **Full mobile QA** — header/nav, product listing grid, product detail, cart page, footer. Layout bugs fixed, horizontal scroll eliminated, all tap targets ≥44×44, iOS input zoom prevented, extra-narrow screen padding added.
 
 ## Rules for the Agent
 - Read this file first. Pick the top unchecked item under **Active Task**.
