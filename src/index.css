@@ -1,0 +1,4 @@
+@import './App.css';
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
