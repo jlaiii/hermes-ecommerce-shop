@@ -48,11 +48,11 @@ img { max-width: 100%; display: block; }
 .desktop-nav a { color: #9ca3af; font-weight: 500; font-size: 15px; transition: color .2s; }
 .desktop-nav a:hover, .desktop-nav a.active { color: #22d3ee; }
 .header-actions { display: flex; align-items: center; gap: 12px; }
-.cart-btn { position: relative; color: #e5e7eb; padding: 8px; border-radius: 8px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); }
+.cart-btn { position: relative; color: #e5e7eb; padding: 8px; border-radius: 8px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; }
 .cart-badge { position: absolute; top: -4px; right: -4px; background: #ef4444; color: #fff; font-size: 11px; font-weight: 700; width: 18px; height: 18px; border-radius: 999px; display: flex; align-items: center; justify-content: center; }
 .mobile-menu-btn { background: transparent; border: none; color: #e5e7eb; display: flex; }
 .mobile-nav { display: flex; flex-direction: column; gap: 12px; padding: 16px 20px; background: rgba(11,15,20,.95); border-bottom: 1px solid rgba(255,255,255,.06); }
-.mobile-nav a { color: #9ca3af; font-weight: 500; font-size: 15px; padding: 8px 0; }
+.mobile-nav a { color: #9ca3af; font-weight: 500; font-size: 15px; padding: 10px 0; display: block; min-height: 44px; display: flex; align-items: center; }
 
 @media (min-width: 768px) {
   .desktop-nav { display: flex; }
@@ -129,7 +129,11 @@ img { max-width: 100%; display: block; }
 .filter-tabs button.active { background: linear-gradient(90deg, #22d3ee, #818cf8); color: #0b0f14; border-color: transparent; }
 .empty-state { text-align: center; padding: 60px 20px; color: #6b7280; }
 
-.product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.product-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+
+@media (min-width: 480px) {
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+}
 
 @media (min-width: 768px) {
   .product-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
