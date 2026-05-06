@@ -34,7 +34,7 @@ Build a public, mobile-first e-commerce frontend hosted on GitHub Pages for **RG
 - [ ] Add FAQ page (shipping, engraving turnaround, care instructions).
 - [ ] Add Testimonials/Reviews section.
 - [ ] Add a "Recently Viewed" section.
-- [ ] Add 404 Not Found page (fallback for react-router on GitHub Pages).
+- [ ] Add **404 Not Found** page — show a random cute dog photo (Unsplash dogs), a playful "Paw not found" or "Looks like this page ran away" message, and a link home. Do NOT use a generic boring 404.
 - [ ] Add legal pages: Privacy Policy, Terms of Service.
 - [ ] Add a Newsletter signup form (UI only, no backend).
 - [ ] **README update**: When all phases above are complete, rewrite README.md with full project description, features list, screenshots, tech stack, and brand info for RGV ENGRAVELABS.
