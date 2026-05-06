@@ -10,8 +10,13 @@ Build a public, mobile-first e-commerce frontend hosted on GitHub Pages for **RG
 
 ## Active Task
 - [ ] Run a full **mobile QA** pass on every page (cart, engraving preview, nav, product grid). Fix any layout bugs, horizontal scroll, tiny tap targets, or broken links. Verify on 320px+ width.
-  - Sub-task: ✅ Header / nav (mobile menu toggle ≥44×44, nav link tap targets)
-  - Next: Product listing grid, product detail, cart page, footer
+- Sub-task: ✅ Header / nav (mobile menu toggle ≥44×44, nav link tap targets)
+- Sub-task: ✅ Product listing grid (prevent overflow, proper grid, tap targets)
+- Sub-task: ✅ Product detail (engraving input 16px to prevent iOS zoom)
+- Sub-task: ✅ Cart page (item layout, quantity controls, tap targets)
+- Sub-task: ✅ Footer (social icons ≥44×44, link tap targets, responsive)
+- Sub-task: ✅ Global image overflow fix, all buttons ≥44×44, extra-narrow padding
+- Next: Test live site on all routes
 
 ## Backlog
 - [ ] Run a full **user-friendliness** pass — clear CTAs, readable fonts/colors, intuitive flow, no confusing dead-ends. Fix anything that feels clunky.
