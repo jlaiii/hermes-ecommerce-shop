@@ -18,7 +18,9 @@
       const params = new URLSearchParams(window.location.search);
       const redirect = params.get('p');
       if (redirect) {
-        window.history.replaceState(null, document.title, '/hermes-ecommerce-shop/' + redirect);
+        const newUrl = '/hermes-ecommerce-shop/' + redirect;
+        window.history.replaceState(null, document.title, newUrl);
+        window.dispatchEvent(new PopStateEvent('popstate'));
       }
     })();
   </script>

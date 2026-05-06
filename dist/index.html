@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="RGV ENGRAVELABS — Premium knives, leather wallets, and custom laser engraving. Built to last, made personal." />
     <title>RGV ENGRAVELABS — Custom Engraving, Knives & Wallets</title>
-    <script type="module" crossorigin src="/hermes-ecommerce-shop/assets/index-BwHyKS5i.js"></script>
+    <script type="module" crossorigin src="/hermes-ecommerce-shop/assets/index-BlObaHRr.js"></script>
     <link rel="stylesheet" crossorigin href="/hermes-ecommerce-shop/assets/index-COtFKcCv.css">
   </head>
   <body>
@@ -19,7 +19,9 @@
       const params = new URLSearchParams(window.location.search);
       const redirect = params.get('p');
       if (redirect) {
-        window.history.replaceState(null, document.title, '/hermes-ecommerce-shop/' + redirect);
+        const newUrl = '/hermes-ecommerce-shop/' + redirect;
+        window.history.replaceState(null, document.title, newUrl);
+        window.dispatchEvent(new PopStateEvent('popstate'));
       }
     })();
   </script>

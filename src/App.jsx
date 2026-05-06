@@ -25,7 +25,7 @@ function InnerApp() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/hermes-ecommerce-shop">
       <CartProvider>
         <InnerApp />
       </CartProvider>
