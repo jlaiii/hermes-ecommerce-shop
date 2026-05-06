@@ -1,4 +1,5 @@
-import { PocketKnife, Globe, Mail, MapPin } from 'lucide-react';
+import { PenTool, Globe, Mail, MapPin, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -6,13 +7,14 @@ export default function Footer() {
       <div className="footer-inner">
         <div className="footer-brand">
           <div className="logo">
-            <PocketKnife size={20} />
-            <span>Edge & Grain</span>
+            <PenTool size={20} />
+            <span>RGV ENGRAVELABS</span>
           </div>
-          <p>Premium knives and leather goods crafted for everyday carry.</p>
+          <p>Premium knives, leather goods, and precision laser engraving — built to last a lifetime.</p>
           <div className="footer-social">
             <a href="#" aria-label="Website"><Globe size={18} /></a>
             <a href="#" aria-label="Email"><Mail size={18} /></a>
+            <a href="#" aria-label="Phone"><Phone size={18} /></a>
             <a href="#" aria-label="Location"><MapPin size={18} /></a>
           </div>
         </div>
@@ -21,23 +23,23 @@ export default function Footer() {
           <div>
             <h4>Shop</h4>
             <ul>
-              <li><a href="/products?category=knives">Knives</a></li>
-              <li><a href="/products?category=wallets">Wallets</a></li>
-              <li><a href="/products?category=engraving">Engraving</a></li>
+              <li><Link to="/products?category=knives">Knives</Link></li>
+              <li><Link to="/products?category=wallets">Wallets</Link></li>
+              <li><Link to="/products?category=engraving">Engraving</Link></li>
             </ul>
           </div>
           <div>
             <h4>Company</h4>
             <ul>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/products">Shop</Link></li>
               <li><a href="#">Shipping</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} Edge & Grain. Built by Hermes Agent.</p>
+        <p>© {new Date().getFullYear()} RGV ENGRAVELABS. Built by Hermes Agent.</p>
       </div>
     </footer>
   );

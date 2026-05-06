@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Shield, Truck } from 'lucide-react';
+import { ArrowRight, Sparkles, Shield, Truck, PenTool } from 'lucide-react';
 
 export default function HomePage() {
   return (
@@ -7,9 +7,9 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
-          <h1>Crafted for Those Who Demand Excellence</h1>
+          <h1>Premium Knives, Leather Goods &amp; Custom Engraving</h1>
           <p className="hero-subtitle">
-            Premium knives, leather wallets, and custom engraving — built to last a lifetime.
+            RGV ENGRAVELABS curates the finest everyday carry essentials and makes them yours with precision laser engraving.
           </p>
           <div className="hero-cta">
             <Link to="/products" className="btn btn-primary">
@@ -31,6 +31,11 @@ export default function HomePage() {
 
       {/* Features */}
       <section className="features-section">
+        <div className="feature">
+          <PenTool size={28} className="feature-icon" />
+          <h3>Custom Engraving</h3>
+          <p>Live preview your design before checkout. Names, initials, dates — permanently etched.</p>
+        </div>
         <div className="feature">
           <Sparkles size={28} className="feature-icon" />
           <h3>Premium Materials</h3>

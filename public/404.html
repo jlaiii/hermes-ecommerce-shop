@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Edge & Grain</title>
+    <script>
+      // SPA redirect for GitHub Pages
+      const path = window.location.pathname;
+      const base = '/hermes-ecommerce-shop/';
+      if (path.startsWith(base)) {
+        const route = path.slice(base.length);
+        window.location.replace(base + '?' + (route ? 'p=' + encodeURIComponent(route) : ''));
+      }
+    </script>
+  </head>
+  <body>
+    Redirecting...
+  </body>
+</html>

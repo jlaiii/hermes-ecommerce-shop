@@ -4,10 +4,22 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edge & Grain — Premium Knives & Wallets</title>
+    <meta name="description" content="RGV ENGRAVELABS — Premium knives, leather wallets, and custom laser engraving. Built to last, made personal." />
+    <title>RGV ENGRAVELABS — Custom Engraving, Knives & Wallets</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
+
+  <script>
+    // SPA redirect for GitHub Pages
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const redirect = params.get('p');
+      if (redirect) {
+        window.history.replaceState(null, document.title, redirect);
+      }
+    })();
+  </script>
 </html>

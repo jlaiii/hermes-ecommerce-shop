@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { ShoppingCart, Menu, X, PocketKnife } from 'lucide-react';
+import { ShoppingCart, Menu, X, PenTool } from 'lucide-react';
 import { useState } from 'react';
 import { useCart } from '../context/CartContext';
 
@@ -8,19 +8,29 @@ export default function Header() {
   const location = useLocation();
   const { cartCount } = useCart();
 
+  const current = location.pathname + location.search;
+
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Products', path: '/products' },
     { name: 'Knives', path: '/products?category=knives' },
     { name: 'Wallets', path: '/products?category=wallets' },
+    { name: 'About', path: '/about' },
   ];
+
+  const isActive = (path) => {
+    // exact match or starts with /products when on product routes
+    if (path === '/') return current === '/';
+    if (path === '/products') return current.startsWith('/products') || current.startsWith('/product/');
+    return current === path || current.startsWith(path);
+  };
 
   return (
     <header className="header">
       <div className="header-inner">
         <Link to="/" className="logo" aria-label="Home">
-          <PocketKnife size={24} />
-          <span>Edge & Grain</span>
+          <PenTool size={24} />
+          <span>RGV ENGRAVELABS</span>
         </Link>
 
         <nav className="desktop-nav">
@@ -28,7 +38,7 @@ export default function Header() {
             <Link
               key={link.name}
               to={link.path}
-              className={location.pathname === link.path ? 'active' : ''}
+              className={isActive(link.path) ? 'active' : ''}
             >
               {link.name}
             </Link>

@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import ProductListingPage from './pages/ProductListingPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import CartPage from './pages/CartPage';
+import AboutPage from './pages/AboutPage';
 
 function InnerApp() {
   const { addToCart } = useCart();
@@ -16,6 +17,7 @@ function InnerApp() {
         <Route path="/products" element={<ProductListingPage addToCart={addToCart} />} />
         <Route path="/product/:id" element={<ProductDetailPage addToCart={addToCart} />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/about" element={<AboutPage />} />
       </Route>
     </Routes>
   );

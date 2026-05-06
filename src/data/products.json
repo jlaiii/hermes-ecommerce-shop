@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "name": "Damascus Steel Chef Knife",
+    "name": "Damascus Chef Knife",
     "price": 129.99,
     "category": "knives",
-    "shortDesc": "Hand-forged VG10 Damascus chef knife with ergonomic octagonal handle.",
-    "description": "A premium 8-inch chef knife featuring 67 layers of Japanese VG10 Damascus steel. The razor-sharp edge retains its bite through heavy use, while the octagonal walnut handle offers supreme comfort and control. Perfect for both professional kitchens and home cooking enthusiasts.",
+    "shortDesc": "Hand-forged VG10 Damascus chef knife with custom laser engraving available.",
+    "description": "An 8-inch chef knife forged from 67 layers of Japanese VG10 Damascus steel. Razor-sharp, balanced, and built to last. Add your initials or a custom message with our precision laser engraving for a truly personal blade.",
     "image": "https://images.unsplash.com/photo-1590422668638-60c2fd4d4344?w=800&q=80",
     "engravable": true,
     "badge": "Bestseller"
@@ -15,8 +15,8 @@
     "name": "Tactical Folding Knife",
     "price": 59.99,
     "category": "knives",
-    "shortDesc": "Lightweight D2 steel folding knife with G10 handle and ball-bearing pivot.",
-    "description": "Designed for everyday carry, this tactical folder features a 3.5-inch D2 tool steel blade with a stonewashed finish. The ball-bearing pivot ensures silky-smooth deployment, and the textured G10 handle provides a secure grip in any condition.",
+    "shortDesc": "D2 steel folding knife with ball-bearing pivot and optional handle engraving.",
+    "description": "A 3.5-inch D2 tool steel blade with a stonewashed finish and ball-bearing pivot for smooth deployment. The textured G10 handle can be laser engraved with your name or logo.",
     "image": "https://images.unsplash.com/photo-1585314614250-d9536987a28a?w=800&q=80",
     "engravable": true
   },
@@ -25,8 +25,8 @@
     "name": "Japanese Santoku Knife",
     "price": 89.99,
     "category": "knives",
-    "shortDesc": "7-inch Santoku with granton edge for precise slicing and dicing.",
-    "description": "The Santoku is the Japanese answer to the Western chef knife. This 7-inch variation uses high-carbon stainless steel with a granton (scalloped) edge to reduce friction and prevent food from sticking. Ideal for vegetables, fish, and boneless meats.",
+    "shortDesc": "7-inch Santoku with granton edge — engrave the bolster with a monogram.",
+    "description": "The all-purpose Japanese Santoku with a granton edge to prevent sticking. High-carbon stainless steel holds an edge beautifully. Personalize the bolster with laser engraving.",
     "image": "https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=800&q=80",
     "engravable": true
   },
@@ -35,8 +35,8 @@
     "name": "Steak Knife Set (4pc)",
     "price": 79.99,
     "category": "knives",
-    "shortDesc": "Serrated steak knives with full-tang construction and polished handles.",
-    "description": "Elevate your dining experience with this set of four full-tang steak knives. Each blade features micro-serrated edges that glide effortlessly through any cut of meat. The polished resin handles add a touch of elegance to your dinner table.",
+    "shortDesc": "Full-tang serrated steak knives — perfect for engraved dinner sets.",
+    "description": "Four full-tang steak knives with micro-serrated edges and polished handles. A beautiful addition to any dining table. Note: engraving not available on this set.",
     "image": "https://images.unsplash.com/photo-1622383563227-044011358d20?w=800&q=80",
     "engravable": false
   },
@@ -45,8 +45,8 @@
     "name": "Minimalist Leather Wallet",
     "price": 49.99,
     "category": "wallets",
-    "shortDesc": "Ultra-slim vegetable-tanned leather wallet with 6 card slots.",
-    "description": "Crafted from full-grain vegetable-tanned leather, this minimalist wallet ages beautifully with a rich patina. It features 6 card slots, a bill compartment, and a hidden pocket — all while staying remarkably thin in your front pocket.",
+    "shortDesc": "Ultra-slim veg-tan leather wallet with interior laser engraving.",
+    "description": "Crafted from full-grain vegetable-tanned leather that develops a rich patina over time. 6 card slots plus bill compartment. Add a hidden message or initials with interior laser engraving.",
     "image": "https://images.unsplash.com/photo-1627123424574-181ce5171c98?w=800&q=80",
     "engravable": true,
     "badge": "Popular"
@@ -56,8 +56,8 @@
     "name": "RFID Blocking Bifold",
     "price": 39.99,
     "category": "wallets",
-    "shortDesc": "Classic bifold wallet with RFID-blocking lining and ID window.",
-    "description": "A timeless bifold design updated with modern security. The built-in RFID-blocking lining protects your cards from digital theft, while the clear ID window and multiple compartments keep everything organized and accessible.",
+    "shortDesc": "Classic bifold with RFID protection and custom exterior engraving.",
+    "description": "A timeless bifold upgraded with RFID-blocking lining and a clear ID window. Personalize the exterior with laser-engraved initials, names, or a short quote.",
     "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80",
     "engravable": true
   },
@@ -66,18 +66,18 @@
     "name": "Carbon Fiber Money Clip",
     "price": 29.99,
     "category": "wallets",
-    "shortDesc": "Lightweight carbon fiber money clip with expandable card holder.",
-    "description": "For those who carry light, this carbon fiber money clip weighs next to nothing while securely holding your bills and up to 6 cards. The spring-steel clip maintains tension over thousands of uses.",
+    "shortDesc": "Lightweight carbon fiber clip with precision laser engraving.",
+    "description": "Ultra-lightweight carbon fiber money clip that securely holds bills and up to 6 cards. Engrave your initials or a short message on the clip face.",
     "image": "https://images.unsplash.com/photo-1606503825008-909a6184afac?w=800&q=80",
     "engravable": true
   },
   {
     "id": 8,
-    "name": "Custom Engraving Service",
+    "name": "Custom Laser Engraving",
     "price": 14.99,
     "category": "engraving",
     "shortDesc": "Add a personalized laser engraving to any engravable product.",
-    "description": "Make it truly yours. Our precision laser engraving service can add names, initials, dates, or short messages to any engravable product in our catalog. Choose from multiple fonts and preview your design before checkout.",
+    "description": "Make it yours with our precision laser engraving. Add names, initials, dates, coordinates, or short messages to knives, wallets, and more. Preview your design live before checkout.",
     "image": "https://images.unsplash.com/photo-1586075010923-2dd45eeed8bd?w=800&q=80",
     "engravable": false,
     "isService": true
