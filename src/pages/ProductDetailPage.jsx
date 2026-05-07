@@ -1,6 +1,6 @@
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ShoppingCart, ArrowLeft, Type, Check } from 'lucide-react';
+import { ShoppingCart, ArrowLeft, Type, Check, RotateCcw } from 'lucide-react';
 import { useState, useRef } from 'react';
 import { useToast } from '../context/ToastContext';
 import products from '../data/products.json';
@@ -42,6 +42,17 @@ export default function ProductDetailPage({ addToCart }) {
     addToCart(product, engraving, engraveFont, engraveColor, engraveRotate, engravePosX, engravePosY, engraveSize);
     showToast(`Added ${product.name} to cart`);
     setTimeout(() => setAdding(false), 1200);
+  };
+
+  const handleReset = () => {
+    setEngraveFont('ui-serif, Georgia, Cambria, "Times New Roman", serif');
+    setEngraveColor('#ffffff');
+    setEngraveRotate(0);
+    setEngravePosX(50);
+    setEngravePosY(85);
+    setEngraveSize(18);
+    setEngraving('');
+    showToast('Engraving settings reset');
   };
 
   const jsonLd = {
@@ -214,6 +225,11 @@ export default function ProductDetailPage({ addToCart }) {
                         title="Custom color"
                       />
                     </div>
+                  </div>
+                  <div className="engrave-field engrave-field-wide">
+                    <button className="btn btn-small btn-secondary" onClick={handleReset} type="button">
+                      <RotateCcw size={14} /> Reset Engraving
+                    </button>
                   </div>
                   <div className="engrave-field">
                     <label htmlFor="engrave-rotate">Rotate</label>
