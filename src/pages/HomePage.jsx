@@ -48,7 +48,7 @@ export default function HomePage() {
         </div>
         <div className="hero-image-wrapper">
           <img
-            src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80"
+            src="/hermes-ecommerce-shop/images/hero-knife.jpg"
             alt="Hand-forged Damascus chef knife on a dark cutting board"
             className="hero-img"
           />

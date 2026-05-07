@@ -44,7 +44,7 @@ export default function AboutPage() {
             </div>
             <figure className="about-image-wrapper">
           <img
-            src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80"
+            src="/hermes-ecommerce-shop/images/workshop.jpg"
             alt="Leather workshop tools and custom engraving workspace"
             loading="lazy"
           />

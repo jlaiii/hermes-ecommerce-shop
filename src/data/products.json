@@ -6,7 +6,7 @@
     "category": "knives",
     "shortDesc": "Hand-forged VG10 Damascus chef knife with custom laser engraving available.",
     "description": "An 8-inch chef knife forged from 67 layers of Japanese VG10 Damascus steel. Razor-sharp, balanced, and built to last. Add your initials or a custom message with our precision laser engraving for a truly personal blade.",
-    "image": "https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=800&q=80",
+    "image": "/hermes-ecommerce-shop/images/damascus-chef.jpg",
     "engravable": true,
     "badge": "Bestseller"
   },
@@ -17,7 +17,7 @@
     "category": "knives",
     "shortDesc": "D2 steel folding knife with ball-bearing pivot and optional handle engraving.",
     "description": "A 3.5-inch D2 tool steel blade with a stonewashed finish and ball-bearing pivot for smooth deployment. The textured G10 handle can be laser engraved with your name or logo.",
-    "image": "https://images.unsplash.com/photo-1592155931584-901ac15763e3?w=800&q=80",
+    "image": "/hermes-ecommerce-shop/images/tactical-knife.jpg",
     "engravable": true
   },
   {
@@ -27,7 +27,7 @@
     "category": "knives",
     "shortDesc": "7-inch Santoku with granton edge — engrave the bolster with a monogram.",
     "description": "The all-purpose Japanese Santoku with a granton edge to prevent sticking. High-carbon stainless steel holds an edge beautifully. Personalize the bolster with laser engraving.",
-    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80",
+    "image": "/hermes-ecommerce-shop/images/japanese-santoku.jpg",
     "engravable": true
   },
   {
@@ -37,7 +37,7 @@
     "category": "knives",
     "shortDesc": "Full-tang serrated steak knives — perfect for engraved dinner sets.",
     "description": "Four full-tang steak knives with micro-serrated edges and polished handles. A beautiful addition to any dining table. Note: engraving not available on this set.",
-    "image": "https://images.unsplash.com/photo-1625036452519-de446d5a3cb4?w=800&q=80",
+    "image": "/hermes-ecommerce-shop/images/steak-set.jpg",
     "engravable": false
   },
   {
@@ -47,7 +47,7 @@
     "category": "wallets",
     "shortDesc": "Ultra-slim veg-tan leather wallet with interior laser engraving.",
     "description": "Crafted from full-grain vegetable-tanned leather that develops a rich patina over time. 6 card slots plus bill compartment. Add a hidden message or initials with interior laser engraving.",
-    "image": "https://images.unsplash.com/photo-1637169797848-12431f1d355c?w=800&q=80",
+    "image": "/hermes-ecommerce-shop/images/minimalist-wallet.jpg",
     "engravable": true,
     "badge": "Popular"
   },
@@ -58,7 +58,7 @@
     "category": "wallets",
     "shortDesc": "Classic bifold with RFID protection and custom exterior engraving.",
     "description": "A timeless bifold upgraded with RFID-blocking lining and a clear ID window. Personalize the exterior with laser-engraved initials, names, or a short quote.",
-    "image": "https://images.unsplash.com/photo-1545239351-ef35f43d514b?w=800&q=80",
+    "image": "/hermes-ecommerce-shop/images/bifold.jpg",
     "engravable": true
   },
   {
@@ -68,7 +68,7 @@
     "category": "wallets",
     "shortDesc": "Lightweight carbon fiber clip with precision laser engraving.",
     "description": "Ultra-lightweight carbon fiber money clip that securely holds bills and up to 6 cards. Engrave your initials or a short message on the clip face.",
-    "image": "https://images.unsplash.com/photo-1574607524755-56493b242d28?w=800&q=80",
+    "image": "/hermes-ecommerce-shop/images/money-clip.jpg",
     "engravable": true
   },
   {
@@ -78,7 +78,7 @@
     "category": "engraving",
     "shortDesc": "Add a personalized laser engraving to any engravable product.",
     "description": "Make it yours with our precision laser engraving. Add names, initials, dates, coordinates, or short messages to knives, wallets, and more. Preview your design live before checkout.",
-    "image": "https://images.unsplash.com/photo-1560343787-b90cb337028e?w=800&q=80",
+    "image": "/hermes-ecommerce-shop/images/laser-engraving.jpg",
     "engravable": false,
     "isService": true
   }
