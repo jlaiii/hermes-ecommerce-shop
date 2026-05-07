@@ -227,6 +227,17 @@ img { max-width: 100%; height: auto; display: block; overflow: hidden; }
 
 .engrave-controls { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 10px; }
 .engrave-field { display: flex; flex-direction: column; gap: 4px; }
+.engrave-field.engrave-field-wide { grid-column: 1 / -1; }
+.color-presets { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.color-swatch {
+  width: 28px; height: 28px; border-radius: 50%; border: 2px solid transparent;
+  cursor: pointer; padding: 0; flex-shrink: 0; min-width: 28px; min-height: 28px;
+}
+.color-swatch.active { border-color: var(--accent); box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent); }
+.color-presets input[type="color"] {
+  width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border-input);
+  background: var(--bg); cursor: pointer; padding: 2px; flex-shrink: 0;
+}
 .engrave-field label { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 0; }
 .engrave-field select,
 .engrave-field input[type="color"],

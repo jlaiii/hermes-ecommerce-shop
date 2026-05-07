@@ -19,6 +19,7 @@ export default function ProductDetailPage({ addToCart }) {
   const [engravePosX, setEngravePosX] = useState(50);
   const [engravePosY, setEngravePosY] = useState(85);
   const [engraveSize, setEngraveSize] = useState(18);
+  const colorPresets = ['#ffffff', '#000000', '#fbbf24', '#94a3b8', '#ef4444', '#3b82f6', '#22c55e'];
 
   if (!product) {
     return (
@@ -159,14 +160,28 @@ export default function ProductDetailPage({ addToCart }) {
                       <option value="'Courier New', Courier, monospace">Typewriter</option>
                     </select>
                   </div>
-                  <div className="engrave-field">
-                    <label htmlFor="engrave-color">Color</label>
-                    <input
-                      id="engrave-color"
-                      type="color"
-                      value={engraveColor}
-                      onChange={(e) => setEngraveColor(e.target.value)}
-                    />
+                  <div className="engrave-field engrave-field-wide">
+                    <label>Color</label>
+                    <div className="color-presets">
+                      {colorPresets.map((c) => (
+                        <button
+                          key={c}
+                          className={`color-swatch ${engraveColor === c ? 'active' : ''}`}
+                          style={{ background: c }}
+                          onClick={() => setEngraveColor(c)}
+                          aria-label={`Set engraving color ${c}`}
+                          title={c}
+                        />
+                      ))}
+                      <input
+                        id="engrave-color"
+                        type="color"
+                        value={engraveColor}
+                        onChange={(e) => setEngraveColor(e.target.value)}
+                        aria-label="Custom engraving color picker"
+                        title="Custom color"
+                      />
+                    </div>
                   </div>
                   <div className="engrave-field">
                     <label htmlFor="engrave-rotate">Rotate</label>
