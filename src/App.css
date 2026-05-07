@@ -485,3 +485,25 @@ img { max-width: 100%; height: auto; display: block; overflow: hidden; }
   .contact-section { padding: 32px 12px; }
   .contact-form { padding: 18px; }
 }
+
+/* Page load / route transition animations */
+.page-transition {
+  animation: pageFadeIn 350ms ease-out both;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    animation: none;
+  }
+}
