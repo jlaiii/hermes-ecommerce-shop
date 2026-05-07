@@ -215,8 +215,9 @@ img { max-width: 100%; height: auto; display: block; overflow: hidden; }
 .product-detail { display: grid; grid-template-columns: 1fr; gap: 28px; }
 .detail-image-wrapper { position: relative; border-radius: 16px; overflow: hidden; border: 1px solid var(--border-strong); }
 .detail-image-wrapper img { width: 100%; object-fit: cover; }
-.engrave-preview-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
-.engrave-text { position: absolute; font-weight: 700; letter-spacing: .04em; font-size: clamp(12px, 2.2vw, 22px); white-space: nowrap; }
+.engrave-preview-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: auto; user-select: none; }
+.engrave-preview-overlay.dragging { cursor: grabbing; }
+.engrave-text { position: absolute; font-weight: 700; letter-spacing: .04em; font-size: clamp(12px, 2.2vw, 22px); white-space: nowrap; pointer-events: none; }
 .detail-info h1 { margin: 0 0 8px; font-size: clamp(22px, 3vw, 32px); }
 .detail-price { font-size: 24px; font-weight: 700; color: var(--accent); margin: 0 0 12px; }
 .detail-desc { color: var(--text-muted); line-height: 1.6; margin: 0 0 20px; }

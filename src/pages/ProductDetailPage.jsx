@@ -1,7 +1,7 @@
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ShoppingCart, ArrowLeft, Type, Check } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useToast } from '../context/ToastContext';
 import products from '../data/products.json';
 
@@ -19,6 +19,8 @@ export default function ProductDetailPage({ addToCart }) {
   const [engravePosX, setEngravePosX] = useState(50);
   const [engravePosY, setEngravePosY] = useState(85);
   const [engraveSize, setEngraveSize] = useState(18);
+  const [isDragging, setIsDragging] = useState(false);
+  const overlayRef = useRef(null);
   const colorPresets = ['#ffffff', '#000000', '#fbbf24', '#94a3b8', '#ef4444', '#3b82f6', '#22c55e'];
 
   if (!product) {
@@ -106,10 +108,28 @@ export default function ProductDetailPage({ addToCart }) {
         </button>
 
         <div className="product-detail">
-          <div className="detail-image-wrapper">
+          <div className="detail-image-wrapper" ref={overlayRef}>
             <img src={product.image} alt={product.name} />
             {product.engravable && engraving && (
-              <div className="engrave-preview-overlay">
+              <div
+                className={`engrave-preview-overlay ${isDragging ? 'dragging' : ''}`}
+                onPointerDown={(e) => {
+                  if (!overlayRef.current) return;
+                  setIsDragging(true);
+                  overlayRef.current.setPointerCapture?.(e.pointerId);
+                }}
+                onPointerMove={(e) => {
+                  if (!isDragging || !overlayRef.current) return;
+                  const rect = overlayRef.current.getBoundingClientRect();
+                  const x = ((e.clientX - rect.left) / rect.width) * 100;
+                  const y = ((e.clientY - rect.top) / rect.height) * 100;
+                  setEngravePosX(Math.min(90, Math.max(10, Math.round(x))));
+                  setEngravePosY(Math.min(90, Math.max(10, Math.round(y))));
+                }}
+                onPointerUp={() => setIsDragging(false)}
+                onPointerLeave={() => setIsDragging(false)}
+                style={{ touchAction: 'none' }}
+              >
                 <span
                   className="engrave-text"
                   style={{
@@ -119,6 +139,7 @@ export default function ProductDetailPage({ addToCart }) {
                     transform: `translate(-50%, -50%) rotate(${engraveRotate}deg)`,
                     left: `${engravePosX}%`,
                     top: `${engravePosY}%`,
+                    cursor: isDragging ? 'grabbing' : 'grab',
                   }}
                 >
                   {engraving}
