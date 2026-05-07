@@ -9,7 +9,7 @@ Build a public, mobile-first e-commerce frontend hosted on GitHub Pages for **RG
 - **Branch**: `main` (source), `gh-pages` (deployed `dist/`)
 
 ## Active Task
-- [ ] **Replace product images:** Swap generic Unsplash placeholders for real knife/wallet product photos or high-quality category-specific Unsplash equivalents.
+- [ ] Add a Contact / Reach-Out page (simple form UI, no backend).
 
 ## Backlog
 - [ ] Add a Contact / Reach-Out page (simple form UI, no backend).
