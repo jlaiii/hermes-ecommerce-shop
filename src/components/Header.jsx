@@ -82,6 +82,17 @@ export default function Header() {
               {link.name}
             </Link>
           ))}
+          <button
+            className="mobile-theme-toggle"
+            onClick={() => {
+              toggleTheme();
+              setMenuOpen(false);
+            }}
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+            <span>{theme === 'dark' ? 'Light mode' : 'Dark mode'}</span>
+          </button>
         </nav>
       )}
     </header>

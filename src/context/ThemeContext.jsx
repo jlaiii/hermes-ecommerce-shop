@@ -5,10 +5,8 @@ const ThemeContext = createContext();
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('theme');
-      if (saved === 'light' || saved === 'dark') return saved;
-      const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-      return prefersLight ? 'light' : 'dark';
+      // Sync with the inline script in index.html to avoid hydration mismatch
+      return document.documentElement.getAttribute('data-theme') || 'dark';
     }
     return 'dark';
   });
@@ -17,13 +15,19 @@ export function ThemeProvider({ children }) {
     const root = document.documentElement;
     root.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
+    // Update theme-color meta for mobile browser chrome
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    if (metaTheme) metaTheme.setAttribute('content', theme === 'light' ? '#f8fafc' : '#0b0f14');
   }, [theme]);
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-color-scheme: light)');
     const handle = (e) => {
       const saved = localStorage.getItem('theme');
-      if (!saved) setTheme(e.matches ? 'light' : 'dark');
+      // Only auto-switch if user hasn't manually set a preference this session
+      if (!saved || saved === 'auto') {
+        setTheme(e.matches ? 'light' : 'dark');
+      }
     };
     mq.addEventListener?.('change', handle);
     return () => mq.removeEventListener?.('change', handle);

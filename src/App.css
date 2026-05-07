@@ -93,6 +93,8 @@ img { max-width: 100%; height: auto; display: block; overflow: hidden; }
 .mobile-menu-btn { background: transparent; border: none; color: var(--text); display: flex; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; padding: 10px; border-radius: 8px; }
 .mobile-nav { display: flex; flex-direction: column; gap: 12px; padding: 16px 20px; background: var(--surface); border-bottom: 1px solid var(--border); }
 .mobile-nav a { color: var(--text-muted); font-weight: 500; font-size: 15px; padding: 10px 0; display: block; min-height: 44px; display: flex; align-items: center; }
+.mobile-theme-toggle { display: inline-flex; align-items: center; gap: 10px; background: transparent; border: none; color: var(--text); font-size: 15px; font-weight: 500; padding: 10px 0; min-height: 44px; }
+.mobile-theme-toggle svg { color: var(--accent); }
 
 @media (min-width: 768px) {
   .desktop-nav { display: flex; }
