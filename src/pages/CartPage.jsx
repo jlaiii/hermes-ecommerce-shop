@@ -43,11 +43,11 @@ export default function CartPage() {
                 <img src={item.image} alt={item.name} />
                 <div className="cart-item-info">
                   <Link to={`/product/${item.id}`}><h2>{item.name}</h2></Link>
-                  {item.engraving && (
-                    <p className="engrave-tag">
-                      Engraving: "{item.engraving}"
-                    </p>
-                  )}
+                {item.engraving && (
+                  <p className="engrave-tag">
+                    Engraving: "{item.engraving}"{item.engraveFont && ` (${item.engraveFont.split(',')[0]})`}{item.engraveColor && ` — ${item.engraveColor}`}
+                  </p>
+                )}
                   <span className="price">
                     ${item.price.toFixed(2)}
                   </span>

@@ -15,7 +15,7 @@ export function CartProvider({ children }) {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
-  const addToCart = (product, engraving = '') => {
+  const addToCart = (product, engraving = '', engraveFont = '', engraveColor = '') => {
     setCart((prev) => {
       const existing = prev.find(
         (item) => item.id === product.id && item.engraving === engraving
@@ -27,7 +27,7 @@ export function CartProvider({ children }) {
             : item
         );
       }
-      return [...prev, { ...product, qty: 1, engraving }];
+      return [...prev, { ...product, qty: 1, engraving, engraveFont, engraveColor }];
     });
   };
 

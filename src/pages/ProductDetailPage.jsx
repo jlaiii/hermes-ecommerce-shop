@@ -13,6 +13,8 @@ export default function ProductDetailPage({ addToCart }) {
 
   const [engraving, setEngraving] = useState('');
   const [adding, setAdding] = useState(false);
+  const [engraveFont, setEngraveFont] = useState('ui-serif, Georgia, Cambria, "Times New Roman", serif');
+  const [engraveColor, setEngraveColor] = useState('#ffffff');
 
   if (!product) {
     return (
@@ -30,7 +32,7 @@ export default function ProductDetailPage({ addToCart }) {
   const handleAdd = () => {
     if (adding) return;
     setAdding(true);
-    addToCart(product, engraving);
+    addToCart(product, engraving, engraveFont, engraveColor);
     showToast(`Added ${product.name} to cart`);
     setTimeout(() => setAdding(false), 1200);
   };
@@ -103,7 +105,12 @@ export default function ProductDetailPage({ addToCart }) {
             <img src={product.image} alt={product.name} />
             {product.engravable && engraving && (
               <div className="engrave-preview-overlay">
-                <span className="engrave-text">{engraving}</span>
+                <span
+                  className="engrave-text"
+                  style={{ fontFamily: engraveFont, color: engraveColor }}
+                >
+                  {engraving}
+                </span>
               </div>
             )}
           </div>
@@ -127,6 +134,30 @@ export default function ProductDetailPage({ addToCart }) {
                   onChange={(e) => setEngraving(e.target.value)}
                   aria-describedby="engrave-help"
                 />
+                <div className="engrave-controls">
+                  <div className="engrave-field">
+                    <label htmlFor="engrave-font">Font</label>
+                    <select
+                      id="engrave-font"
+                      value={engraveFont}
+                      onChange={(e) => setEngraveFont(e.target.value)}
+                    >
+                      <option value="ui-serif, Georgia, Cambria, 'Times New Roman', serif">Serif</option>
+                      <option value="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Sans</option>
+                      <option value="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace">Mono</option>
+                      <option value="'Courier New', Courier, monospace">Typewriter</option>
+                    </select>
+                  </div>
+                  <div className="engrave-field">
+                    <label htmlFor="engrave-color">Color</label>
+                    <input
+                      id="engrave-color"
+                      type="color"
+                      value={engraveColor}
+                      onChange={(e) => setEngraveColor(e.target.value)}
+                    />
+                  </div>
+                </div>
                 <p id="engrave-help" className="helper-text">
                   {engraving
                     ? `${engraving.length}/30 characters`
