@@ -1,12 +1,14 @@
 import { Link, useLocation } from 'react-router-dom';
-import { ShoppingCart, Menu, X, PenTool } from 'lucide-react';
+import { ShoppingCart, Menu, X, PenTool, Sun, Moon } from 'lucide-react';
 import { useState } from 'react';
 import { useCart } from '../context/CartContext';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const { cartCount } = useCart();
+  const { theme, toggleTheme } = useTheme();
 
   const current = location.pathname + location.search;
 
@@ -47,6 +49,14 @@ export default function Header() {
         </nav>
 
         <div className="header-actions">
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
           <Link to="/cart" className="cart-btn" aria-label="Cart">
             <ShoppingCart size={20} />
             {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
