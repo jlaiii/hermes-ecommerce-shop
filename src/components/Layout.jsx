@@ -9,7 +9,7 @@ export default function Layout() {
   return (
     <div className="layout">
       <Header cartCount={cartCount} />
-      <main className="main-content">
+      <main className="main-content page-transition">
         <Outlet />
       </main>
       <Footer />

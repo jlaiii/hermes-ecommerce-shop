@@ -345,6 +345,22 @@ img { max-width: 100%; height: auto; display: block; overflow: hidden; }
   .about-contact-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
+/* Page transition animation */
+.page-transition {
+  animation: pageFadeIn 0.3s ease-out;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    animation: none;
+  }
+}
+
 /* Extra-narrow mobiles ≤ 359px */
 @media (max-width: 359px) {
   .hero-section { padding: 32px 12px; }

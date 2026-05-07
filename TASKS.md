@@ -9,11 +9,9 @@ Build a public, mobile-first e-commerce frontend hosted on GitHub Pages for **RG
 - **Branch**: `main` (source), `gh-pages` (deployed `dist/`)
 
 ## Active Task
-- [ ] Implement a lightweight dark-mode toggle with `prefers-color-scheme` support.
+- [ ] Add subtle page-load / route-transition animations.
 
 ## Backlog
-- [ ] Implement a lightweight dark-mode toggle with `prefers-color-scheme` support.
-- [ ] Implement a lightweight dark-mode toggle with `prefers-color-scheme` support.
 - [ ] Add subtle page-load / route-transition animations.
 - [ ] Improve engraving preview: font selector, color selector, rotate/position controls.
 - [ ] Add search + category filters to the product listing page.
