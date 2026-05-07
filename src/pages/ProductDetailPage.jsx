@@ -168,18 +168,29 @@ export default function ProductDetailPage({ addToCart }) {
                   aria-describedby="engrave-help"
                 />
                 <div className="engrave-controls">
-                  <div className="engrave-field">
-                    <label htmlFor="engrave-font">Font</label>
-                    <select
-                      id="engrave-font"
-                      value={engraveFont}
-                      onChange={(e) => setEngraveFont(e.target.value)}
-                    >
-                      <option value="ui-serif, Georgia, Cambria, 'Times New Roman', serif">Serif</option>
-                      <option value="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Sans</option>
-                      <option value="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace">Mono</option>
-                      <option value="'Courier New', Courier, monospace">Typewriter</option>
-                    </select>
+                  <div className="engrave-field engrave-field-wide">
+                    <label>Font</label>
+                    <div className="font-options" role="radiogroup" aria-label="Engraving font">
+                      {[
+                        { value: "ui-serif, Georgia, Cambria, 'Times New Roman', serif", label: "Serif" },
+                        { value: "ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif", label: "Sans" },
+                        { value: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace", label: "Mono" },
+                        { value: "'Courier New', Courier, monospace", label: "Type" },
+                      ].map((f) => (
+                        <button
+                          key={f.value}
+                          className={`font-option ${engraveFont === f.value ? 'active' : ''}`}
+                          onClick={() => setEngraveFont(f.value)}
+                          style={{ fontFamily: f.value }}
+                          aria-label={`Select ${f.label} font`}
+                          aria-pressed={engraveFont === f.value}
+                          title={f.label}
+                          type="button"
+                        >
+                          {f.label}
+                        </button>
+                      ))}
+                    </div>
                   </div>
                   <div className="engrave-field engrave-field-wide">
                     <label>Color</label>
