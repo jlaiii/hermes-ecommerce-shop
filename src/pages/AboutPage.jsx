@@ -43,11 +43,11 @@ export default function AboutPage() {
               </p>
             </div>
             <figure className="about-image-wrapper">
-              <img
-                src="https://images.unsplash.com/photo-1586075010923-2dd45eeed8bd?w=800&q=80"
-                alt="Precision laser engraving process on leather"
-                loading="lazy"
-              />
+          <img
+            src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80"
+            alt="Leather workshop tools and custom engraving workspace"
+            loading="lazy"
+          />
             </figure>
           </div>
         </section>

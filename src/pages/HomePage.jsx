@@ -48,7 +48,7 @@ export default function HomePage() {
         </div>
         <div className="hero-image-wrapper">
           <img
-            src="https://images.unsplash.com/photo-1590422668638-60c2fd4d4344?w=900&q=80"
+            src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80"
             alt="Hand-forged Damascus chef knife on a dark cutting board"
             className="hero-img"
           />
