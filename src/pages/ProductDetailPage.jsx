@@ -15,6 +15,9 @@ export default function ProductDetailPage({ addToCart }) {
   const [adding, setAdding] = useState(false);
   const [engraveFont, setEngraveFont] = useState('ui-serif, Georgia, Cambria, "Times New Roman", serif');
   const [engraveColor, setEngraveColor] = useState('#ffffff');
+  const [engraveRotate, setEngraveRotate] = useState(0);
+  const [engravePosX, setEngravePosX] = useState(50);
+  const [engravePosY, setEngravePosY] = useState(85);
 
   if (!product) {
     return (
@@ -32,7 +35,7 @@ export default function ProductDetailPage({ addToCart }) {
   const handleAdd = () => {
     if (adding) return;
     setAdding(true);
-    addToCart(product, engraving, engraveFont, engraveColor);
+    addToCart(product, engraving, engraveFont, engraveColor, engraveRotate, engravePosX, engravePosY);
     showToast(`Added ${product.name} to cart`);
     setTimeout(() => setAdding(false), 1200);
   };
@@ -107,7 +110,13 @@ export default function ProductDetailPage({ addToCart }) {
               <div className="engrave-preview-overlay">
                 <span
                   className="engrave-text"
-                  style={{ fontFamily: engraveFont, color: engraveColor }}
+                  style={{
+                    fontFamily: engraveFont,
+                    color: engraveColor,
+                    transform: `translate(-50%, -50%) rotate(${engraveRotate}deg)`,
+                    left: `${engravePosX}%`,
+                    top: `${engravePosY}%`,
+                  }}
                 >
                   {engraving}
                 </span>
@@ -156,6 +165,42 @@ export default function ProductDetailPage({ addToCart }) {
                       value={engraveColor}
                       onChange={(e) => setEngraveColor(e.target.value)}
                     />
+                  </div>
+                  <div className="engrave-field">
+                    <label htmlFor="engrave-rotate">Rotate</label>
+                    <input
+                      id="engrave-rotate"
+                      type="range"
+                      min={-45}
+                      max={45}
+                      value={engraveRotate}
+                      onChange={(e) => setEngraveRotate(Number(e.target.value))}
+                    />
+                    <span className="engrave-value">{engraveRotate}°</span>
+                  </div>
+                  <div className="engrave-field">
+                    <label htmlFor="engrave-x">X Position</label>
+                    <input
+                      id="engrave-x"
+                      type="range"
+                      min={10}
+                      max={90}
+                      value={engravePosX}
+                      onChange={(e) => setEngravePosX(Number(e.target.value))}
+                    />
+                    <span className="engrave-value">{engravePosX}%</span>
+                  </div>
+                  <div className="engrave-field">
+                    <label htmlFor="engrave-y">Y Position</label>
+                    <input
+                      id="engrave-y"
+                      type="range"
+                      min={10}
+                      max={90}
+                      value={engravePosY}
+                      onChange={(e) => setEngravePosY(Number(e.target.value))}
+                    />
+                    <span className="engrave-value">{engravePosY}%</span>
                   </div>
                 </div>
                 <p id="engrave-help" className="helper-text">

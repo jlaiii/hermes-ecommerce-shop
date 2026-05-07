@@ -215,8 +215,8 @@ img { max-width: 100%; height: auto; display: block; overflow: hidden; }
 .product-detail { display: grid; grid-template-columns: 1fr; gap: 28px; }
 .detail-image-wrapper { position: relative; border-radius: 16px; overflow: hidden; border: 1px solid var(--border-strong); }
 .detail-image-wrapper img { width: 100%; object-fit: cover; }
-.engrave-preview-overlay { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,.65); padding: 8px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,.2); }
-.engrave-text { font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif; font-weight: 700; color: var(--text); letter-spacing: .04em; font-size: 18px; }
+.engrave-preview-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
+.engrave-text { position: absolute; font-weight: 700; letter-spacing: .04em; font-size: clamp(12px, 2.2vw, 22px); white-space: nowrap; }
 .detail-info h1 { margin: 0 0 8px; font-size: clamp(22px, 3vw, 32px); }
 .detail-price { font-size: 24px; font-weight: 700; color: var(--accent); margin: 0 0 12px; }
 .detail-desc { color: var(--text-muted); line-height: 1.6; margin: 0 0 20px; }
@@ -225,20 +225,27 @@ img { max-width: 100%; height: auto; display: block; overflow: hidden; }
 .engrave-section input[type="text"] { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border-input); background: var(--bg); color: var(--text); font-size: 15px; }
 .engrave-section input[type="text"]:focus { outline: 2px solid var(--accent); border-color: transparent; }
 
-.engrave-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; }
+.engrave-controls { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 10px; }
 .engrave-field { display: flex; flex-direction: column; gap: 4px; }
 .engrave-field label { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 0; }
 .engrave-field select,
-.engrave-field input[type="color"] {
+.engrave-field input[type="color"],
+.engrave-field input[type="range"] {
   width: 100%; padding: 8px; border-radius: 8px; border: 1px solid var(--border-input);
   background: var(--bg); color: var(--text); font-size: 14px;
 }
 .engrave-field select:focus,
-.engrave-field input[type="color"]:focus { outline: 2px solid var(--accent); border-color: transparent; }
+.engrave-field input[type="color"]:focus,
+.engrave-field input[type="range"]:focus { outline: 2px solid var(--accent); border-color: transparent; }
 .engrave-field input[type="color"] { height: 38px; padding: 2px; cursor: pointer; }
+.engrave-field input[type="range"] { padding: 0; cursor: pointer; accent-color: var(--accent); }
+.engrave-value { font-size: 12px; color: var(--text-muted); text-align: right; }
 
 @media (max-width: 359px) {
   .engrave-controls { grid-template-columns: 1fr; }
+}
+@media (min-width: 360px) and (max-width: 600px) {
+  .engrave-controls { grid-template-columns: 1fr 1fr; }
 }
 .helper-text { margin: 8px 0 0; color: var(--text-dim); font-size: 13px; }
 
