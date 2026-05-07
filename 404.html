@@ -46,6 +46,29 @@
         <p>Even our guard dog couldn't track it down. Let's head back to safety.</p>
         <a href="/hermes-ecommerce-shop/">Go Home</a>
       </noscript>
+      <script>
+        (function() {
+          var container = document.querySelector('.container');
+          var img = document.createElement('img');
+          img.className = 'dog';
+          img.src = 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&q=80';
+          img.alt = 'A hopeful dog looking for the missing page';
+          container.insertBefore(img, container.firstChild);
+
+          var h1 = document.createElement('h1');
+          h1.textContent = 'Looks Like This Page Ran Away';
+          container.appendChild(h1);
+
+          var p = document.createElement('p');
+          p.textContent = "Even our guard dog couldn't track it down. Let's head back to safety.";
+          container.appendChild(p);
+
+          var a = document.createElement('a');
+          a.href = '/hermes-ecommerce-shop/';
+          a.textContent = 'Go Home';
+          container.appendChild(a);
+        })();
+      </script>
       <p class="note">If you're not redirected automatically, <a href="/hermes-ecommerce-shop/">go home</a>.</p>
     </div>
   </body>
