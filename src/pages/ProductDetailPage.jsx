@@ -18,6 +18,7 @@ export default function ProductDetailPage({ addToCart }) {
   const [engraveRotate, setEngraveRotate] = useState(0);
   const [engravePosX, setEngravePosX] = useState(50);
   const [engravePosY, setEngravePosY] = useState(85);
+  const [engraveSize, setEngraveSize] = useState(18);
 
   if (!product) {
     return (
@@ -35,7 +36,7 @@ export default function ProductDetailPage({ addToCart }) {
   const handleAdd = () => {
     if (adding) return;
     setAdding(true);
-    addToCart(product, engraving, engraveFont, engraveColor, engraveRotate, engravePosX, engravePosY);
+    addToCart(product, engraving, engraveFont, engraveColor, engraveRotate, engravePosX, engravePosY, engraveSize);
     showToast(`Added ${product.name} to cart`);
     setTimeout(() => setAdding(false), 1200);
   };
@@ -113,6 +114,7 @@ export default function ProductDetailPage({ addToCart }) {
                   style={{
                     fontFamily: engraveFont,
                     color: engraveColor,
+                    fontSize: `${engraveSize}px`,
                     transform: `translate(-50%, -50%) rotate(${engraveRotate}deg)`,
                     left: `${engravePosX}%`,
                     top: `${engravePosY}%`,
@@ -201,6 +203,18 @@ export default function ProductDetailPage({ addToCart }) {
                       onChange={(e) => setEngravePosY(Number(e.target.value))}
                     />
                     <span className="engrave-value">{engravePosY}%</span>
+                  </div>
+                  <div className="engrave-field">
+                    <label htmlFor="engrave-size">Size</label>
+                    <input
+                      id="engrave-size"
+                      type="range"
+                      min={10}
+                      max={48}
+                      value={engraveSize}
+                      onChange={(e) => setEngraveSize(Number(e.target.value))}
+                    />
+                    <span className="engrave-value">{engraveSize}px</span>
                   </div>
                 </div>
                 <p id="engrave-help" className="helper-text">
