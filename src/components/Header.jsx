@@ -16,6 +16,7 @@ export default function Header() {
     { name: 'Knives', path: '/products?category=knives' },
     { name: 'Wallets', path: '/products?category=wallets' },
     { name: 'About', path: '/about' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   const isActive = (path) => {
