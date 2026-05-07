@@ -1,10 +1,13 @@
 import { Link, useSearchParams } from 'react-router-dom';
-import { ShoppingCart, Filter } from 'lucide-react';
+import { ShoppingCart, Filter, Check } from 'lucide-react';
+import { useState } from 'react';
+import { useToast } from '../context/ToastContext';
 import products from '../data/products.json';
 
 export default function ProductListingPage({ addToCart }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const category = searchParams.get('category') || 'all';
+  const { showToast } = useToast();
 
   const filtered =
     category === 'all'
@@ -17,6 +20,11 @@ export default function ProductListingPage({ addToCart }) {
     { key: 'wallets', label: 'Wallets' },
     { key: 'engraving', label: 'Engraving' },
   ];
+
+  const handleQuickAdd = (product) => {
+    addToCart(product);
+    showToast(`Added ${product.name} to cart`);
+  };
 
   return (
     <div className="product-listing-page">
@@ -48,7 +56,7 @@ export default function ProductListingPage({ addToCart }) {
             <ProductCard
               key={product.id}
               product={product}
-              addToCart={addToCart}
+              onQuickAdd={handleQuickAdd}
             />
           ))}
         </div>
@@ -57,7 +65,15 @@ export default function ProductListingPage({ addToCart }) {
   );
 }
 
-function ProductCard({ product, addToCart }) {
+function ProductCard({ product, onQuickAdd }) {
+  const [added, setAdded] = useState(false);
+
+  const handleClick = () => {
+    onQuickAdd(product);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1400);
+  };
+
   return (
     <div className="product-card">
       <Link to={`/product/${product.id}`} className="card-image-link">
@@ -72,11 +88,12 @@ function ProductCard({ product, addToCart }) {
         <div className="card-footer">
           <span className="price">${product.price.toFixed(2)}</span>
           <button
-            className="btn btn-icon"
-            onClick={() => addToCart(product)}
-            aria-label="Add to cart"
+            className={`btn btn-icon ${added ? 'added' : ''}`}
+            onClick={handleClick}
+            aria-label={added ? 'Added to cart' : 'Quick add to cart'}
+            title={added ? 'Added!' : 'Quick add to cart'}
           >
-            <ShoppingCart size={18} />
+            {added ? <Check size={18} /> : <ShoppingCart size={18} />}
           </button>
         </div>
       </div>

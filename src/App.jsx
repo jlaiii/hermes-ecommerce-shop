@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartProvider, useCart } from './context/CartContext';
+import { ToastProvider } from './context/ToastContext';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
 import ProductListingPage from './pages/ProductListingPage';
@@ -26,9 +27,11 @@ function InnerApp() {
 function App() {
   return (
     <BrowserRouter basename="/hermes-ecommerce-shop">
-      <CartProvider>
-        <InnerApp />
-      </CartProvider>
+      <ToastProvider>
+        <CartProvider>
+          <InnerApp />
+        </CartProvider>
+      </ToastProvider>
     </BrowserRouter>
   );
 }

@@ -31,6 +31,7 @@ img { max-width: 100%; height: auto; display: block; overflow: hidden; }
 .btn-large { padding: 14px 24px; font-size: 16px; min-height: 48px; }
 .btn-small { padding: 8px 12px; font-size: 13px; min-height: 44px; }
 .btn-icon { padding: 10px; border-radius: 8px; min-height: 44px; min-width: 44px; justify-content: center; }
+.btn-icon.added { background: linear-gradient(90deg, #22d3ee, #818cf8); color: #0b0f14; border-color: transparent; }
 .btn-back { background: transparent; border: 1px solid rgba(255,255,255,.12); color: #9ca3af; margin-bottom: 16px; min-height: 44px; align-items: center; }
 .btn-text { background: transparent; border: none; color: #ef4444; font-size: 14px; min-height: 44px; padding: 8px 12px; }
 
@@ -217,6 +218,39 @@ img { max-width: 100%; height: auto; display: block; overflow: hidden; }
 .summary-row.total { font-weight: 700; color: #e5e7eb; border-top: 1px solid rgba(255,255,255,.08); margin-top: 8px; padding-top: 12px; }
 .btn-checkout { width: 100%; margin-top: 12px; }
 
+/* Toast notifications */
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+.toast {
+  background: #111827;
+  color: #e5e7eb;
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+  animation: toast-in .25s ease, toast-out .25s ease 1.8s forwards;
+  pointer-events: auto;
+}
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes toast-out {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(10px); }
+}
+
 @media (min-width: 900px) {
   .cart-layout { grid-template-columns: 2fr 1fr; }
 }
@@ -292,3 +326,26 @@ img { max-width: 100%; height: auto; display: block; overflow: hidden; }
   .engrave-section input { font-size: 16px; }
   .cart-item-info h3 { font-size: 14px; }
 }
+
+/* Scroll to top button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 110;
+  background: linear-gradient(135deg, #22d3ee, #818cf8);
+  color: #0b0f14;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,.4);
+  cursor: pointer;
+  transition: transform .15s ease, opacity .2s ease;
+  opacity: .9;
+}
+.scroll-to-top:hover { transform: translateY(-2px); }
+.scroll-to-top:active { transform: translateY(0); }

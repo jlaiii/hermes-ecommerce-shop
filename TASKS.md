@@ -9,10 +9,9 @@ Build a public, mobile-first e-commerce frontend hosted on GitHub Pages for **RG
 - **Branch**: `main` (source), `gh-pages` (deployed `dist/`)
 
 ## Active Task
-- [ ] Run a full **user-friendliness** pass — clear CTAs, readable fonts/colors, intuitive flow, no confusing dead-ends. Fix anything that feels clunky.
+- [ ] **SEO / discoverability:** Ensure search engines can see the knives and wallets. Add proper `<title>`/`<meta description>` on every page, JSON-LD Product schema, semantic HTML (`<main>`, `<article>`, `<header>`, etc.), alt text on images, and a `robots.txt` that allows indexing.
 
 ## Backlog
-- [ ] **SEO / discoverability:** Ensure search engines can see the knives and wallets. Add proper `<title>`/`<meta description>` on every page, JSON-LD Product schema, semantic HTML (`<main>`, `<article>`, `<header>`, etc.), alt text on images, and a `robots.txt` that allows indexing.
 - [ ] **Page-load smoke test:** Hard-refresh the live site, check Network tab for 404s, verify `<noscript>` fallback, verify favicon loads.
 - [ ] Replace placeholder product images with real knife/wallet product photos or high-quality Unsplash equivalents.
 - [ ] Add a Contact / Reach-Out page (simple form UI, no backend).
@@ -50,6 +49,7 @@ Build a public, mobile-first e-commerce frontend hosted on GitHub Pages for **RG
 - [x] **404.html improved** with brand styling, noscript fallback, and "Looks Like This Page Ran Away" messaging.
 - [x] **Deploy script** (`npm run deploy`) added to package.json.
 - [x] **Full mobile QA** — header/nav, product listing grid, product detail, cart page, footer. Layout bugs fixed, horizontal scroll eliminated, all tap targets ≥44×44, iOS input zoom prevented, extra-narrow screen padding added.
+- [x] **User-friendliness pass** — toast notifications on add-to-cart, quick-add checkmark feedback on cards, scroll-to-top button, focus/hover states, aria-labels on icon buttons, product-not-found CTA, 404 dog image + CTA, consolidated CSS, added scrollbar-gutter, nav active states, reduced motion support.
 
 ## Rules for the Agent
 - Read this file first. Pick the top unchecked item under **Active Task**.

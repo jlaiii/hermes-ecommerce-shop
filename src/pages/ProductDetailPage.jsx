@@ -1,12 +1,14 @@
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { ShoppingCart, ArrowLeft, Type } from 'lucide-react';
+import { ShoppingCart, ArrowLeft, Type, Check } from 'lucide-react';
 import { useState } from 'react';
+import { useToast } from '../context/ToastContext';
 import products from '../data/products.json';
 
 export default function ProductDetailPage({ addToCart }) {
   const { id } = useParams();
   const navigate = useNavigate();
   const product = products.find((p) => p.id === Number(id));
+  const { showToast } = useToast();
 
   const [engraving, setEngraving] = useState('');
   const [adding, setAdding] = useState(false);
@@ -15,15 +17,17 @@ export default function ProductDetailPage({ addToCart }) {
     return (
       <div className="page-container">
         <p>Product not found.</p>
-        <Link to="/products">Browse products</Link>
+        <Link to="/products" className="btn btn-primary">Browse products</Link>
       </div>
     );
   }
 
   const handleAdd = () => {
+    if (adding) return;
     setAdding(true);
     addToCart(product, engraving);
-    setTimeout(() => setAdding(false), 800);
+    showToast(`Added ${product.name} to cart`);
+    setTimeout(() => setAdding(false), 1200);
   };
 
   return (
@@ -70,7 +74,7 @@ export default function ProductDetailPage({ addToCart }) {
             className={`btn btn-primary btn-large ${adding ? 'adding' : ''}`}
             onClick={handleAdd}
           >
-            {adding ? 'Added!' : <><ShoppingCart size={18} /> Add to Cart</>}
+            {adding ? <><Check size={18} /> Added!</> : <><ShoppingCart size={18} /> Add to Cart</>}
           </button>
         </div>
       </div>
