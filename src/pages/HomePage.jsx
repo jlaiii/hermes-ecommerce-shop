@@ -1,10 +1,36 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Sparkles, Shield, Truck, PenTool } from 'lucide-react';
+import products from '../data/products.json';
 
 export default function HomePage() {
+  // pick 3 featured products deterministically
+  const featured = products.filter((p) => [1, 5, 8].includes(p.id));
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'RGV ENGRAVELABS',
+    url: 'https://jlaiii.github.io/hermes-ecommerce-shop/',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://jlaiii.github.io/hermes-ecommerce-shop/products?q={search_term_string}',
+      'query-input': 'required name=search_term_string',
+    },
+  };
+
   return (
     <div className="home-page">
-      {/* Hero Section */}
+      <Helmet>
+        <title>RGV ENGRAVELABS — Premium Custom Engraving, Knives &amp; Wallets</title>
+        <meta
+          name="description"
+          content="Premium knives, leather wallets, and custom laser engraving from RGV ENGRAVELABS. Built to last, made personal."
+        />
+        <link rel="canonical" href="https://jlaiii.github.io/hermes-ecommerce-shop/" />
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      </Helmet>
+
       <section className="hero-section">
         <div className="hero-content">
           <h1>Premium Knives, Leather Goods &amp; Custom Engraving</h1>
@@ -23,14 +49,14 @@ export default function HomePage() {
         <div className="hero-image-wrapper">
           <img
             src="https://images.unsplash.com/photo-1590422668638-60c2fd4d4344?w=900&q=80"
-            alt="Premium knife collection"
+            alt="Hand-forged Damascus chef knife on a dark cutting board"
             className="hero-img"
           />
         </div>
       </section>
 
-      {/* Features */}
-      <section className="features-section">
+      <section className="features-section" aria-labelledby="features-title">
+        <h2 id="features-title" className="sr-only">Why choose us</h2>
         <div className="feature">
           <PenTool size={28} className="feature-icon" />
           <h3>Custom Engraving</h3>
@@ -53,28 +79,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Products */}
-      <section className="featured-section">
-        <h2>Featured Products</h2>
+      <section className="featured-section" aria-labelledby="featured-title">
+        <h2 id="featured-title">Featured Products</h2>
         <div className="featured-grid">
-          <div className="featured-card">
-            <img src="https://images.unsplash.com/photo-1590422668638-60c2fd4d4344?w=600&q=80" alt="Chef Knife" />
-            <h4>Damascus Chef Knife</h4>
-            <p>$129.99</p>
-            <Link to="/product/1" className="btn btn-small">View Details</Link>
-          </div>
-          <div className="featured-card">
-            <img src="https://images.unsplash.com/photo-1627123424574-181ce5171c98?w=600&q=80" alt="Leather Wallet" />
-            <h4>Minimalist Leather Wallet</h4>
-            <p>$49.99</p>
-            <Link to="/product/5" className="btn btn-small">View Details</Link>
-          </div>
-          <div className="featured-card">
-            <img src="https://images.unsplash.com/photo-1586075010923-2dd45eeed8bd?w=600&q=80" alt="Custom Engraving" />
-            <h4>Custom Engraving Service</h4>
-            <p>$14.99</p>
-            <Link to="/product/8" className="btn btn-small">View Details</Link>
-          </div>
+          {featured.map((product) => (
+            <article key={product.id} className="featured-card">
+              <Link to={`/product/${product.id}`}>
+                <img src={product.image} alt={product.name} loading="lazy" />
+              </Link>
+              <h4>{product.name}</h4>
+              <p>${product.price.toFixed(2)}</p>
+              <Link to={`/product/${product.id}`} className="btn btn-small">View Details</Link>
+            </article>
+          ))}
         </div>
       </section>
     </div>

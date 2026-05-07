@@ -9,10 +9,9 @@ Build a public, mobile-first e-commerce frontend hosted on GitHub Pages for **RG
 - **Branch**: `main` (source), `gh-pages` (deployed `dist/`)
 
 ## Active Task
-- [ ] **SEO / discoverability:** Ensure search engines can see the knives and wallets. Add proper `<title>`/`<meta description>` on every page, JSON-LD Product schema, semantic HTML (`<main>`, `<article>`, `<header>`, etc.), alt text on images, and a `robots.txt` that allows indexing.
+- [ ] **Page-load smoke test:** Hard-refresh the live site, check Network tab for 404s, verify `<noscript>` fallback, verify favicon loads.
 
 ## Backlog
-- [ ] **Page-load smoke test:** Hard-refresh the live site, check Network tab for 404s, verify `<noscript>` fallback, verify favicon loads.
 - [ ] Replace placeholder product images with real knife/wallet product photos or high-quality Unsplash equivalents.
 - [ ] Add a Contact / Reach-Out page (simple form UI, no backend).
 - [ ] Implement a lightweight dark-mode toggle with `prefers-color-scheme` support.

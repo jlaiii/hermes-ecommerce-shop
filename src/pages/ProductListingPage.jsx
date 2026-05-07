@@ -1,4 +1,5 @@
 import { Link, useSearchParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ShoppingCart, Filter, Check } from 'lucide-react';
 import { useState } from 'react';
 import { useToast } from '../context/ToastContext';
@@ -26,42 +27,65 @@ export default function ProductListingPage({ addToCart }) {
     showToast(`Added ${product.name} to cart`);
   };
 
-  return (
-    <div className="product-listing-page">
-      <div className="page-header">
-        <h1>Our Products</h1>
-        <div className="filter-bar">
-          <Filter size={18} />
-          <div className="filter-tabs">
-            {categories.map((cat) => (
-              <button
-                key={cat.key}
-                className={category === cat.key ? 'active' : ''}
-                onClick={() =>
-                  setSearchParams(cat.key === 'all' ? {} : { category: cat.key })
-                }
-              >
-                {cat.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
+  const pageTitle =
+    category === 'all'
+      ? 'Shop All Products'
+      : `Shop ${categories.find((c) => c.key === category)?.label || 'Products'}`;
 
-      {filtered.length === 0 ? (
-        <div className="empty-state">No products found.</div>
-      ) : (
-        <div className="product-grid">
-          {filtered.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              onQuickAdd={handleQuickAdd}
-            />
-          ))}
-        </div>
-      )}
-    </div>
+  return (
+    <>
+      <Helmet>
+        <title>{pageTitle} — RGV ENGRAVELABS</title>
+        <meta
+          name="description"
+          content="Browse premium knives, leather wallets, and custom laser engraving services from RGV ENGRAVELABS."
+        />
+        <link
+          rel="canonical"
+          href={`https://jlaiii.github.io/hermes-ecommerce-shop/products${category !== 'all' ? `?category=${category}` : ''}`}
+        />
+      </Helmet>
+
+      <div className="product-listing-page">
+        <header className="page-header">
+          <h1>Our Products</h1>
+          <div className="filter-bar">
+            <Filter size={18} />
+            <nav className="filter-tabs" aria-label="Product category filter">
+              {categories.map((cat) => (
+                <button
+                  key={cat.key}
+                  className={category === cat.key ? 'active' : ''}
+                  onClick={() =>
+                    setSearchParams(cat.key === 'all' ? {} : { category: cat.key })
+                  }
+                  aria-pressed={category === cat.key}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </nav>
+          </div>
+        </header>
+
+        {filtered.length === 0 ? (
+          <div className="empty-state">No products found.</div>
+        ) : (
+          <section
+            className="product-grid"
+            aria-label={`${pageTitle} results`}
+          >
+            {filtered.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                onQuickAdd={handleQuickAdd}
+              />
+            ))}
+          </section>
+        )}
+      </div>
+    </>
   );
 }
 
@@ -75,7 +99,7 @@ function ProductCard({ product, onQuickAdd }) {
   };
 
   return (
-    <div className="product-card">
+    <article className="product-card">
       <Link to={`/product/${product.id}`} className="card-image-link">
         <img src={product.image} alt={product.name} loading="lazy" />
         {product.badge && <span className="badge">{product.badge}</span>}
@@ -97,6 +121,6 @@ function ProductCard({ product, onQuickAdd }) {
           </button>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
