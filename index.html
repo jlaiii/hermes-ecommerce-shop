@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0b0f14" />
     <meta name="description" content="Premium knives, leather wallets, and custom laser engraving from RGV ENGRAVELABS. Built to last, made personal." />
+    <script>
+      // Prevent FOUC: set theme immediately before React hydrates
+      (function() {
+        var theme = localStorage.getItem('theme');
+        if (!theme) {
+          theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        document.documentElement.setAttribute('data-theme', theme);
+        var metaTheme = document.querySelector('meta[name="theme-color"]');
+        if (metaTheme) metaTheme.setAttribute('content', theme === 'light' ? '#f8fafc' : '#0b0f14');
+      })();
+    </script>
     <link rel="preconnect" href="https://images.unsplash.com" />
     <meta property="og:title" content="RGV ENGRAVELABS — Custom Engraving, Knives &amp; Wallets" />
     <meta property="og:description" content="Premium knives, leather wallets, and custom laser engraving from RGV ENGRAVELABS." />
@@ -14,8 +26,8 @@
     <meta property="og:url" content="https://jlaiii.github.io/hermes-ecommerce-shop/" />
     <meta name="twitter:card" content="summary_large_image" />
     <title>RGV ENGRAVELABS — Custom Engraving, Knives & Wallets</title>
-    <script type="module" crossorigin src="/hermes-ecommerce-shop/assets/index-D-t308FX.js"></script>
-    <link rel="stylesheet" crossorigin href="/hermes-ecommerce-shop/assets/index-DOnHtqI_.css">
+    <script type="module" crossorigin src="/hermes-ecommerce-shop/assets/index-BEi3FJ7m.js"></script>
+    <link rel="stylesheet" crossorigin href="/hermes-ecommerce-shop/assets/index-D5TvD8bB.css">
   </head>
   <body>
     <noscript>
